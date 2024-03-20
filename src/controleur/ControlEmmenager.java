@@ -6,17 +6,17 @@ import villagegaulois.Village;
 
 public class ControlEmmenager {
 	private Village village;
-
+	
 	public ControlEmmenager(Village village) {
 		this.village = village;
+		
 	}
 
 	public boolean isHabitant(String nom) {
 		return village.trouverHabitant(nom) != null;
 	}
 
-	public void ajouterDruide(String nom, int force, int effetPotionMin,
-			int effetPotionMax) {
+	public void ajouterDuide(String nom, int force, int effetPotionMin,int effetPotionMax) {
 		Druide druide = new Druide(nom, force, effetPotionMin, effetPotionMax);
 		village.ajouterHabitant(druide);
 

@@ -1,5 +1,7 @@
 package frontiere;
 
+import personnages.Gaulois;
+import java.util.Scanner;
 import controleur.ControlEmmenager;
 
 public class BoundaryEmmenager {
@@ -27,7 +29,12 @@ public class BoundaryEmmenager {
 					break;
 
 				case 2:
-					//TODO a completer
+					System.out.println("Bienvenu villageois"+ nomVisiteur + "Quelle est votre force ?");
+					Scanner sc=new Scanner(System.in);
+					int force = sc.nextInt();
+					controlEmmenager.ajouterGaulois(nomVisiteur,force);
+					new Gaulois("Blablacar", force);
+					
 					break;
 
 				default:
@@ -40,6 +47,23 @@ public class BoundaryEmmenager {
 	}
 
 	private void emmenagerDruide(String nomVisiteur) {
-		//TODO a completer
+	    System.out.println("Bienvenu, druide " + nomVisiteur + ". Veuillez entrer les informations nécessaires.");
+
+	    Scanner sc = new Scanner(System.in);
+
+	    System.out.print("Entrez la force du druide : ");
+	    int forceDruide = sc.nextInt();
+
+	    System.out.print("Entrez l'effet minimum de la potion : ");
+	    int effetMinPotion = sc.nextInt();
+
+	    System.out.print("Entrez l'effet maximum de la potion : ");
+	    int effetMaxPotion = sc.nextInt();
+
+	    controlEmmenager.ajouterDuide(nomVisiteur, forceDruide, effetMinPotion, effetMaxPotion);
+
+	    System.out.println("Bienvenue, druide " + nomVisiteur + "! Vous avez emménagé dans le village.");
+	    
 	}
-}
+	}
+
